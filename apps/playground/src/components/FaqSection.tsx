@@ -11,7 +11,7 @@ export function FaqSection() {
           <span className="site-section-label">Help</span>
           <h2 className="site-section-title">FAQ</h2>
           <p className="site-section-desc">
-            Common questions about installing, integrating, and customizing Quiz Kit.
+            Common questions about installing, integrating, and customizing Hapleroo Quizzard.
           </p>
         </header>
 

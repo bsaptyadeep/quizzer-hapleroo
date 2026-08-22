@@ -10,8 +10,8 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@quiz/core": "workspace:*",
-    "@quiz/react": "workspace:*",
+    "hapleroo-quizzard-core": "workspace:*",
+    "hapleroo-quizzard": "workspace:*",
     "react": "^19.2.0",
     "react-dom": "^19.2.0"
   },

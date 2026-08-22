@@ -1,5 +1,5 @@
-import type { MultipleChoiceQuestion } from "@quiz/core";
-import type { AnswerValue } from "@quiz/core";
+import type { MultipleChoiceQuestion } from "hapleroo-quizzard-core";
+import type { AnswerValue } from "hapleroo-quizzard-core";
 import styles from "../styles/quiz.module.css";
 
 interface MultipleChoiceOptionsProps {

@@ -1,5 +1,5 @@
-import type { QuizConfig, QuizEvent } from "@quiz/core";
-import { Quiz } from "@quiz/react";
+import type { QuizConfig, QuizEvent } from "hapleroo-quizzard-core";
+import { Quiz } from "hapleroo-quizzard";
 import { useCallback, useMemo, useState } from "react";
 import { mixedDemo } from "../quizzes/mixed-demo";
 import { singleChoiceDemo } from "../quizzes/single-choice-demo";

@@ -18,7 +18,7 @@ export function SiteHeader({ activeSection, onToggleTheme, isDark }: SiteHeaderP
       <div className="site-container site-header-inner">
         <a href="#" className="site-logo">
           <span className="site-logo-mark">Q</span>
-          Quiz Kit
+          Hapleroo Quizzard
         </a>
 
         <nav className="site-nav" aria-label="Page sections">

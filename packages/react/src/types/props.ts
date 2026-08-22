@@ -4,7 +4,7 @@ import type {
   QuizDefinition,
   QuizEvent,
   QuizResult,
-} from "@quiz/core";
+} from "hapleroo-quizzard-core";
 
 export interface QuizProps {
   quiz: QuizDefinition;

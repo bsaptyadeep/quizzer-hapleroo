@@ -6,7 +6,7 @@ export default defineConfig({
   dts: true,
   sourcemap: true,
   clean: true,
-  external: ["react", "react-dom", "@quiz/core"],
+  external: ["react", "react-dom", "hapleroo-quizzard-core"],
   injectStyle: false,
   esbuildOptions(options) {
     options.loader = {

@@ -12,4 +12,4 @@ export type {
   QuizDefinition,
   QuizEvent,
   QuizResult,
-} from "@quiz/core";
+} from "hapleroo-quizzard-core";

@@ -1,6 +1,6 @@
 {
-  "name": "@quiz/core",
-  "version": "0.0.0",
+  "name": "hapleroo-quizzard-core",
+  "version": "0.1.0",
   "description": "Framework-agnostic quiz engine",
   "type": "module",
   "main": "./dist/index.js",

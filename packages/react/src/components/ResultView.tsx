@@ -1,4 +1,4 @@
-import type { QuizResult } from "@quiz/core";
+import type { QuizResult } from "hapleroo-quizzard-core";
 import styles from "../styles/quiz.module.css";
 
 interface ResultViewProps {

@@ -38,12 +38,12 @@ importers:
 
   apps/playground:
     dependencies:
-      '@quiz/core':
-        specifier: workspace:*
-        version: link:../../packages/core
-      '@quiz/react':
+      hapleroo-quizzard:
         specifier: workspace:*
         version: link:../../packages/react
+      hapleroo-quizzard-core:
+        specifier: workspace:*
+        version: link:../../packages/core
       react:
         specifier: ^19.2.0
         version: 19.2.8
@@ -81,7 +81,7 @@ importers:
 
   packages/react:
     dependencies:
-      '@quiz/core':
+      hapleroo-quizzard-core:
         specifier: workspace:*
         version: link:../core
     devDependencies:

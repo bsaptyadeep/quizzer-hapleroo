@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import "@quiz/react/styles.css";
+import "hapleroo-quizzard/styles.css";
 import { useActiveSection } from "./hooks/useActiveSection";
 import { useTheme } from "./hooks/useTheme";
 import { ApiReference } from "./components/ApiReference";

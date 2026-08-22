@@ -5,19 +5,19 @@ export interface FaqItem {
 
 export const FAQ_ITEMS: FaqItem[] = [
   {
-    question: "Do I need both @quiz/react and @quiz/core?",
+    question: "Do I need both hapleroo-quizzard and hapleroo-quizzard-core?",
     answer:
-      "If you use the React <Quiz /> component or useQuizEngine hook, install both packages. @quiz/react depends on @quiz/core for types and the engine. If you only need the headless engine (vanilla JS, Vue, etc.), @quiz/core alone is sufficient.",
+      "If you use the React <Quiz /> component or useQuizEngine hook, install both packages. hapleroo-quizzard depends on hapleroo-quizzard-core for types and the engine. If you only need the headless engine (vanilla JS, Vue, etc.), hapleroo-quizzard-core alone is sufficient.",
   },
   {
     question: "Can I use the engine without React?",
     answer:
-      "Yes. @quiz/core is framework-agnostic. Use createQuizEngine() to manage quiz state, subscribe to changes, and handle navigation and scoring in any JavaScript environment.",
+      "Yes. hapleroo-quizzard-core is framework-agnostic. Use createQuizEngine() to manage quiz state, subscribe to changes, and handle navigation and scoring in any JavaScript environment.",
   },
   {
     question: "How do I customize styling?",
     answer:
-      "Import @quiz/react/styles.css for defaults, then pass a className to <Quiz /> and override CSS custom properties such as --quiz-color-primary, --quiz-color-bg, and --quiz-radius on that wrapper.",
+      "Import hapleroo-quizzard/styles.css for defaults, then pass a className to <Quiz /> and override CSS custom properties such as --quiz-color-primary, --quiz-color-bg, and --quiz-radius on that wrapper.",
   },
   {
     question: "What events does onEvent emit?",
@@ -37,7 +37,7 @@ export const FAQ_ITEMS: FaqItem[] = [
   {
     question: "How do I validate my quiz JSON before runtime?",
     answer:
-      "Use validateQuizDefinition() from @quiz/core. It returns { success: true, data } or { success: false, issues } with path, code, and message for each validation problem.",
+      "Use validateQuizDefinition() from hapleroo-quizzard-core. It returns { success: true, data } or { success: false, issues } with path, code, and message for each validation problem.",
   },
   {
     question: "Does it work with SSR / Next.js?",

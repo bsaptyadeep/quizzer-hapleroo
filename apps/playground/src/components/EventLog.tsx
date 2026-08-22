@@ -1,4 +1,4 @@
-import type { QuizEvent } from "@quiz/core";
+import type { QuizEvent } from "hapleroo-quizzard-core";
 
 interface EventLogProps {
   events: QuizEvent[];

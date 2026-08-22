@@ -1,4 +1,4 @@
-import { Quiz } from "@quiz/react";
+import { Quiz } from "hapleroo-quizzard";
 import { useState } from "react";
 import { THEME_PRESETS, type ThemePresetId } from "../content/codeExamples";
 import { singleChoiceDemo } from "../quizzes/single-choice-demo";

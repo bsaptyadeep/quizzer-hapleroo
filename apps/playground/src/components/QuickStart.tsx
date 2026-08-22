@@ -25,7 +25,7 @@ export function QuickStart() {
 
         <div className="site-mt-lg">
           <CodeBlock
-            code={`${QUICK_START_STEPS[0].code}\n\nimport { Quiz } from "@quiz/react";\n${QUICK_START_STEPS[1].code}\n\n${QUICK_START_STEPS[2].code}`}
+            code={`${QUICK_START_STEPS[0].code}\n\nimport { Quiz } from "hapleroo-quizzard";\n${QUICK_START_STEPS[1].code}\n\n${QUICK_START_STEPS[2].code}`}
             language="tsx"
           />
         </div>

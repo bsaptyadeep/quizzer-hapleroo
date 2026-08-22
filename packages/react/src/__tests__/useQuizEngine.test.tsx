@@ -13,7 +13,7 @@ function TestHarness({
   quiz: typeof mixedQuizFixture;
   autoStart?: boolean;
   onComplete?: () => void;
-  onEvent?: (event: import("@quiz/core").QuizEvent) => void;
+  onEvent?: (event: import("hapleroo-quizzard-core").QuizEvent) => void;
 }) {
   const { state, actions } = useQuizEngine({
     quiz,

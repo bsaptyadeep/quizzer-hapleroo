@@ -1,13 +1,13 @@
-# Quiz Kit
+# Hapleroo Quizzard
 
 Embeddable, framework-agnostic quiz engine with a React UI adapter.
 
 ## Packages
 
-| Package      | Description                          |
-| ------------ | ------------------------------------ |
-| `@quiz/core` | Framework-agnostic quiz engine       |
-| `@quiz/react`| React `<Quiz />` component           |
+| Package                  | Description                          |
+| ------------------------ | ------------------------------------ |
+| `hapleroo-quizzard-core` | Framework-agnostic quiz engine       |
+| `hapleroo-quizzard`      | React `<Quiz />` component           |
 
 ## Development
 
@@ -23,8 +23,8 @@ pnpm typecheck  # Type-check all packages
 ## Monorepo layout
 
 ```
-quiz-kit/
-├── packages/core/    # @quiz/core
-├── packages/react/   # @quiz/react
+hapleroo-quizzard/
+├── packages/core/    # hapleroo-quizzard-core
+├── packages/react/   # hapleroo-quizzard
 └── apps/playground/  # Local dev app
 ```

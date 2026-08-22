@@ -1,4 +1,4 @@
-import type { QuizDefinition } from "@quiz/core";
+import type { QuizDefinition } from "hapleroo-quizzard-core";
 
 export const mixedQuizFixture: QuizDefinition = {
   id: "mixed-quiz",

@@ -1,4 +1,4 @@
-export const INSTALL_COMMAND = "pnpm add @quiz/react @quiz/core";
+export const INSTALL_COMMAND = "pnpm add hapleroo-quizzard hapleroo-quizzard-core";
 
 export const QUICK_START_STEPS = [
   {
@@ -9,7 +9,7 @@ export const QUICK_START_STEPS = [
   {
     title: "Import styles",
     description: "Include the default quiz stylesheet once in your app entry point.",
-    code: 'import "@quiz/react/styles.css";',
+    code: 'import "hapleroo-quizzard/styles.css";',
   },
   {
     title: "Render the quiz",
@@ -30,9 +30,9 @@ export type DocTabId = (typeof DOC_TABS)[number]["id"];
 export const CODE_EXAMPLES: Record<DocTabId, { language: string; code: string }> = {
   react: {
     language: "tsx",
-    code: `import { Quiz } from "@quiz/react";
-import "@quiz/react/styles.css";
-import type { QuizDefinition } from "@quiz/core";
+    code: `import { Quiz } from "hapleroo-quizzard";
+import "hapleroo-quizzard/styles.css";
+import type { QuizDefinition } from "hapleroo-quizzard-core";
 
 const quiz: QuizDefinition = {
   id: "my-quiz",
@@ -66,8 +66,8 @@ export function QuizPage() {
   },
   hook: {
     language: "tsx",
-    code: `import { useQuizEngine } from "@quiz/react";
-import type { QuizDefinition } from "@quiz/core";
+    code: `import { useQuizEngine } from "hapleroo-quizzard";
+import type { QuizDefinition } from "hapleroo-quizzard-core";
 
 function CustomQuiz({ quiz }: { quiz: QuizDefinition }) {
   const {
@@ -109,7 +109,7 @@ function CustomQuiz({ quiz }: { quiz: QuizDefinition }) {
     code: `import {
   createQuizEngine,
   validateQuizDefinition,
-} from "@quiz/core";
+} from "hapleroo-quizzard-core";
 
 const validation = validateQuizDefinition(quizDefinition);
 if (!validation.success) {
@@ -172,7 +172,7 @@ export const THEME_PRESETS = [
     id: "default",
     label: "Default",
     className: "quiz-theme-default",
-    css: `/* Uses @quiz/react default tokens */`,
+    css: `/* Uses hapleroo-quizzard default tokens */`,
   },
   {
     id: "dark",

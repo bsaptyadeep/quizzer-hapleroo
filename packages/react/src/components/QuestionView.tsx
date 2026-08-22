@@ -3,7 +3,7 @@ import {
   isSingleChoiceQuestion,
   type AnswerValue,
   type Question,
-} from "@quiz/core";
+} from "hapleroo-quizzard-core";
 import styles from "../styles/quiz.module.css";
 import { MultipleChoiceOptions } from "./MultipleChoiceOptions";
 import { SingleChoiceOptions } from "./SingleChoiceOptions";

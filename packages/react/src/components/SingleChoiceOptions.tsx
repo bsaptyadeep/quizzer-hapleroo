@@ -1,5 +1,5 @@
-import type { SingleChoiceQuestion } from "@quiz/core";
-import type { AnswerValue } from "@quiz/core";
+import type { SingleChoiceQuestion } from "hapleroo-quizzard-core";
+import type { AnswerValue } from "hapleroo-quizzard-core";
 import styles from "../styles/quiz.module.css";
 
 interface SingleChoiceOptionsProps {

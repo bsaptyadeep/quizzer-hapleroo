@@ -9,7 +9,7 @@ import {
   type QuizResult,
   type QuizState,
   type RequiredQuizConfig,
-} from "@quiz/core";
+} from "hapleroo-quizzard-core";
 import { useCallback, useEffect, useRef, useState, useSyncExternalStore } from "react";
 
 export interface UseQuizEngineOptions {

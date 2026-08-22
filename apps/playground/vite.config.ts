@@ -6,8 +6,8 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      "@quiz/react": path.resolve(__dirname, "../../packages/react/src"),
-      "@quiz/react/styles.css": path.resolve(
+      "hapleroo-quizzard": path.resolve(__dirname, "../../packages/react/src"),
+      "hapleroo-quizzard/styles.css": path.resolve(
         __dirname,
         "../../packages/react/src/styles/quiz.module.css",
       ),

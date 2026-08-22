@@ -1,6 +1,6 @@
 {
-  "name": "@quiz/react",
-  "version": "0.0.0",
+  "name": "hapleroo-quizzard",
+  "version": "0.1.0",
   "description": "React UI adapter for the quiz engine",
   "type": "module",
   "main": "./dist/index.js",
@@ -26,7 +26,7 @@
     "react-dom": ">=18.0.0"
   },
   "dependencies": {
-    "@quiz/core": "workspace:*"
+    "hapleroo-quizzard-core": "workspace:*"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^6.9.1",
