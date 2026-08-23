@@ -27,7 +27,17 @@ export const QUIZ_PROPS: ApiRow[] = [
     name: "autoStart",
     type: "boolean",
     default: "false",
-    description: "Skip the start screen and begin the quiz immediately on mount.",
+    description: "Skip the start screen and begin on the first question. Also applies after restart.",
+  },
+  {
+    name: "finishPage",
+    type: "FinishPageConfig",
+    description: "Configure the finish/result screen: tiers, variant, breakdown, labels.",
+  },
+  {
+    name: "renderFinishPage",
+    type: "(props: FinishPageRenderProps) => ReactNode",
+    description: "Custom render function that replaces the built-in finish page template.",
   },
   {
     name: "onStart",

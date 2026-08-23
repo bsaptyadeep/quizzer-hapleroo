@@ -1,20 +1,26 @@
+import type { ReactNode } from "react";
 import type { UseQuizEngineReturn } from "../hooks/useQuizEngine";
+import type { FinishPageConfig, FinishPageRenderProps } from "../types/finish-page";
 import styles from "../styles/quiz.module.css";
+import { FinishPage } from "./FinishPage";
 import { Navigation } from "./Navigation";
 import { ProgressBar } from "./ProgressBar";
 import { QuestionView } from "./QuestionView";
 import { QuizHeader } from "./QuizHeader";
-import { ResultView } from "./ResultView";
 import { StartScreen } from "./StartScreen";
 
 interface QuizShellProps extends UseQuizEngineReturn {
   className?: string;
   autoStart?: boolean;
+  finishPage?: FinishPageConfig;
+  renderFinishPage?: (props: FinishPageRenderProps) => ReactNode;
 }
 
 export function QuizShell({
   className,
   autoStart = false,
+  finishPage,
+  renderFinishPage,
   state,
   result,
   currentQuestion,
@@ -64,11 +70,21 @@ export function QuizShell({
       ) : null}
 
       {state.status === "completed" && result ? (
-        <ResultView
-          result={result}
-          showPercentage={config.showPercentage}
-          onRestart={actions.restart}
-        />
+        renderFinishPage ? (
+          renderFinishPage({
+            result,
+            definition,
+            restart: actions.restart,
+          })
+        ) : (
+          <FinishPage
+            result={result}
+            definition={definition}
+            finishPage={finishPage}
+            showPercentageFromConfig={config.showPercentage}
+            onRestart={actions.restart}
+          />
+        )
       ) : null}
     </section>
   );

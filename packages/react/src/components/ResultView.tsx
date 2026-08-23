@@ -5,9 +5,17 @@ interface ResultViewProps {
   result: QuizResult;
   showPercentage: boolean;
   onRestart: () => void;
+  restartLabel?: string;
+  hideRestart?: boolean;
 }
 
-export function ResultView({ result, showPercentage, onRestart }: ResultViewProps) {
+export function ResultView({
+  result,
+  showPercentage,
+  onRestart,
+  restartLabel = "Restart Quiz",
+  hideRestart = false,
+}: ResultViewProps) {
   return (
     <div className={styles.result}>
       <p className={styles.resultScore} aria-live="polite">
@@ -17,9 +25,11 @@ export function ResultView({ result, showPercentage, onRestart }: ResultViewProp
       <p className={styles.resultDetail}>
         Quiz complete in {Math.round(result.durationMs / 1000)} seconds.
       </p>
-      <button type="button" className={styles.buttonPrimary} onClick={onRestart}>
-        Restart Quiz
-      </button>
+      {!hideRestart ? (
+        <button type="button" className={styles.buttonPrimary} onClick={onRestart}>
+          {restartLabel}
+        </button>
+      ) : null}
     </div>
   );
 }

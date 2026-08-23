@@ -22,14 +22,32 @@ function TestHarness({
     onEvent,
   });
 
+  const firstQuestionId = quiz.questions[0]?.id;
+
   return (
     <div>
       <span data-testid="status">{state.status}</span>
       <button type="button" onClick={actions.start}>
         Start
       </button>
+      {firstQuestionId ? (
+        <button
+          type="button"
+          onClick={() =>
+            actions.answer(firstQuestionId, {
+              type: "single-choice",
+              selectedOptionId: "b",
+            })
+          }
+        >
+          Answer
+        </button>
+      ) : null}
       <button type="button" onClick={() => actions.submit()}>
         Force Submit
+      </button>
+      <button type="button" onClick={actions.restart}>
+        Restart
       </button>
     </div>
   );
@@ -68,6 +86,28 @@ describe("useQuizEngine", () => {
     });
 
     rerender(<TestHarness quiz={singleChoiceQuizFixture} autoStart />);
+
+    await waitFor(() => {
+      expect(screen.getByTestId("status")).toHaveTextContent("in_progress");
+    });
+  });
+
+  it("autoStart restarts back to in_progress", async () => {
+    const user = userEvent.setup();
+    render(<TestHarness quiz={singleChoiceQuizFixture} autoStart />);
+
+    await waitFor(() => {
+      expect(screen.getByTestId("status")).toHaveTextContent("in_progress");
+    });
+
+    await user.click(screen.getByRole("button", { name: "Answer" }));
+    await user.click(screen.getByRole("button", { name: "Force Submit" }));
+
+    await waitFor(() => {
+      expect(screen.getByTestId("status")).toHaveTextContent("completed");
+    });
+
+    await user.click(screen.getByRole("button", { name: "Restart" }));
 
     await waitFor(() => {
       expect(screen.getByTestId("status")).toHaveTextContent("in_progress");

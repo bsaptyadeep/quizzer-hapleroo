@@ -46,7 +46,6 @@ export function useQuizEngine(options: UseQuizEngineOptions): UseQuizEngineRetur
   const { quiz, config, autoStart = false } = options;
 
   const [engine, setEngine] = useState(() => createQuizEngine(quiz, config));
-  const autoStartedRef = useRef(false);
   const quizIdRef = useRef(quiz.id);
   const configKeyRef = useRef(JSON.stringify(config ?? {}));
 
@@ -75,7 +74,6 @@ export function useQuizEngine(options: UseQuizEngineOptions): UseQuizEngineRetur
     quizIdRef.current = quiz.id;
     configKeyRef.current = configKey;
     setEngine(createQuizEngine(quiz, config));
-    autoStartedRef.current = false;
   }, [quiz, config]);
 
   const subscribe = useCallback(
@@ -111,11 +109,10 @@ export function useQuizEngine(options: UseQuizEngineOptions): UseQuizEngineRetur
   }, [engine]);
 
   useEffect(() => {
-    if (autoStart && !autoStartedRef.current && engine.getState().status === "not_started") {
-      autoStartedRef.current = true;
+    if (autoStart && engine.getState().status === "not_started") {
       engine.start();
     }
-  }, [autoStart, engine]);
+  }, [autoStart, engine, state.status]);
 
   const actions = {
     start: () => engine.start(),

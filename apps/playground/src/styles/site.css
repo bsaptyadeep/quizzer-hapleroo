@@ -444,6 +444,11 @@ body {
   border-radius: var(--site-radius-sm);
 }
 
+.site-demo-config-label {
+  font-size: 0.875rem;
+  color: var(--site-muted);
+}
+
 .site-toggle {
   display: flex;
   align-items: center;

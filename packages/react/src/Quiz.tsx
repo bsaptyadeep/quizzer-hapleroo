@@ -7,6 +7,8 @@ export function Quiz({
   config,
   className,
   autoStart,
+  finishPage,
+  renderFinishPage,
   onStart,
   onAnswer,
   onComplete,
@@ -27,6 +29,8 @@ export function Quiz({
       {...engineState}
       className={className}
       autoStart={autoStart}
+      finishPage={finishPage}
+      renderFinishPage={renderFinishPage}
     />
   );
 }

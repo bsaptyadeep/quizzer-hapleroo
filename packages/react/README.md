@@ -60,6 +60,48 @@ export function QuizPage() {
 }
 ```
 
+### Skip start screen
+
+Pass `autoStart` to skip the "Start Quiz" screen and open on the first question:
+
+```tsx
+<Quiz quiz={quiz} autoStart />
+```
+
+After restart, the quiz returns to the first question when `autoStart` is enabled.
+
+### Finish page
+
+Configure the result screen with `finishPage` or replace it entirely with `renderFinishPage`:
+
+```tsx
+<Quiz
+  quiz={quiz}
+  finishPage={{
+    showQuestionBreakdown: true,
+    restartLabel: "Play again",
+    tiers: [
+      { minPercentage: 100, title: "Perfect!", subtitle: "Outstanding work." },
+      { minPercentage: 0, title: "Keep going", subtitle: "Try again to improve." },
+    ],
+  }}
+/>
+
+// Or fully custom UI:
+<Quiz
+  quiz={quiz}
+  renderFinishPage={({ result, restart, definition }) => (
+    <div>
+      <h2>{definition.title} complete</h2>
+      <p>{result.percentage}%</p>
+      <button onClick={restart}>Retry</button>
+    </div>
+  )}
+/>
+```
+
+Use `finishPage={{ variant: "minimal" }}` to restore the legacy simple result layout.
+
 ---
 
 ## `<Quiz />` props
@@ -69,7 +111,9 @@ export function QuizPage() {
 | `quiz` | `QuizDefinition` | Yes | Quiz definition including id, title, and questions |
 | `config` | `QuizConfig` | No | Behavior settings (shuffling, navigation, scoring) |
 | `className` | `string` | No | CSS class applied to the quiz root for theming |
-| `autoStart` | `boolean` | No | Skip the start screen (default: `false`) |
+| `autoStart` | `boolean` | No | Skip the start screen and begin on the first question (default: `false`) |
+| `finishPage` | `FinishPageConfig` | No | Configure finish screen: tiers, variant, breakdown, labels |
+| `renderFinishPage` | `(props) => ReactNode` | No | Replace built-in finish page with custom UI |
 | `onStart` | `() => void` | No | Called when the user starts the quiz |
 | `onAnswer` | `({ questionId, value }) => void` | No | Called when the user selects or changes an answer |
 | `onComplete` | `(result: QuizResult) => void` | No | Called when the quiz is submitted with the final result |
@@ -116,7 +160,7 @@ function CustomQuiz({ quiz }: { quiz: QuizDefinition }) {
     onEvent: (event) => console.log(event),
   });
 
-  if (state.status === "idle") {
+  if (state.status === "not_started") {
     return <button onClick={actions.start}>Start</button>;
   }
 

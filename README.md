@@ -88,6 +88,32 @@ export function QuizPage() {
 }
 ```
 
+### Skip start screen
+
+By default, the quiz shows a "Start Quiz" button before the first question. Pass `autoStart` to open directly on question 1:
+
+```tsx
+<Quiz quiz={quiz} autoStart onComplete={(result) => console.log(result)} />
+```
+
+This also applies after restart — the quiz returns to the first question instead of the start screen.
+
+### Finish page
+
+Configure the result screen via `finishPage` or supply a custom `renderFinishPage`:
+
+```tsx
+<Quiz
+  quiz={quiz}
+  finishPage={{
+    showQuestionBreakdown: true,
+    restartLabel: "Play again",
+  }}
+/>
+```
+
+Use `finishPage={{ variant: "minimal" }}` for the legacy simple layout.
+
 ---
 
 ## Quiz definition
@@ -203,7 +229,7 @@ function CustomQuiz({ quiz }) {
     onComplete: (result) => console.log(result),
   });
 
-  if (state.status === "idle") {
+  if (state.status === "not_started") {
     return <button onClick={actions.start}>Start</button>;
   }
 
@@ -298,7 +324,7 @@ if (!result.success) {
 | `quiz` | `QuizDefinition` | Yes | Quiz definition object |
 | `config` | `QuizConfig` | No | Behavior settings |
 | `className` | `string` | No | CSS class for theming via CSS variables |
-| `autoStart` | `boolean` | No | Skip start screen (default: `false`) |
+| `autoStart` | `boolean` | No | Skip start screen, open on first question (default: `false`) |
 | `onStart` | `() => void` | No | Called when quiz starts |
 | `onAnswer` | `({ questionId, value }) => void` | No | Called when user answers |
 | `onComplete` | `(result: QuizResult) => void` | No | Called with final scored result |

@@ -59,6 +59,7 @@ export function QuizPage() {
       config={{ allowBackNavigation: true, shuffleQuestions: false }}
       onComplete={(result) => console.log("Score:", result.percentage + "%")}
       onEvent={(event) => console.log(event.type, event.payload)}
+      finishPage={{ showQuestionBreakdown: true }}
       className="my-quiz-theme"
     />
   );
@@ -85,7 +86,7 @@ function CustomQuiz({ quiz }: { quiz: QuizDefinition }) {
     onEvent: (event) => console.log(event),
   });
 
-  if (state.status === "idle") {
+  if (state.status === "not_started") {
     return <button onClick={actions.start}>Start</button>;
   }
 
